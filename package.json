@@ -1,0 +1,34 @@
+{
+  "name": "fscm-ui",
+  "version": "1.0.0",
+  "description": "Front-end to fscm-api",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "webpack --config webpack.config.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    // "serve": "npx webpack serve",
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/The-Darph/fscm-ui.git"
+  },
+  "author": "The Darph",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/The-Darph/fscm-ui/issues"
+  },
+  "homepage": "https://github.com/The-Darph/fscm-ui#readme",
+  "devDependencies": {
+    "@babel/core": "^7.27.3",
+    "@babel/preset-env": "^7.27.2",
+    "babel-loader": "^10.0.0",
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^13.0.0",
+    "html-webpack-plugin": "^5.6.3",
+    "mini-css-extract-plugin": "^2.9.2",
+    "path": "^0.12.7",
+    "terser-webpack-plugin": "^5.3.14",
+    "webpack": "^5.99.9",
+    "webpack-cli": "^6.0.1"
+  }
+}
