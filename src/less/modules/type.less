@@ -3,6 +3,47 @@
 // Base typography styles adapted
 // from [Typebase](https://github.com/devinhunt/typebase.css/blob/master/src/typebase.less)
  
+ @font-face {
+    font-family: 'Fragment Mono';
+    src: url('../font/FragmentMono-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Fragment Mono';
+    src: url('../font/FragmentMono-Italic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: italic;
+}
+
+ @font-face {
+    font-family: 'Inclusive Sans';
+    src: url('../font/InclusiveSans-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inclusive Sans';
+    src: url('../font/InclusiveSans-BoldItalic.woff2') format('woff2');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Inclusive Sans';
+    src: url('../font/InclusiveSans-Light.woff2') format('woff2');
+    font-weight: light;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inclusive Sans';
+    src: url('../font/InclusiveSans-LightItalic.woff2') format('woff2');
+    font-weight: light;
+    font-style: italic;
+}
 
 @base-font-size: 24;
 @line-height: 1.5;
@@ -10,8 +51,8 @@
 @scale: 1.414;
 
 // Font families
-@body-font:     'Helvetica Neue', Helvetica, 'Lucida Grande', Verdana, sans-serif;
-@headline-font: Georgia, 'Times New Roman', serif;
+@body-font:     'Inclusive Sans', 'Helvetica Neue', Helvetica, 'Lucida Grande', Verdana, sans-serif;
+@headline-font: 'Fragment Mono', Monaco, Consolas, 'Source Code Pro', monospace;
 
 html {
   font-family: @body-font;

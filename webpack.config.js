@@ -16,9 +16,8 @@ module.exports = {
 
   // https://webpack.js.org/concepts/entry-points/#multi-page-application
   entry: {
-    index:          './src/js/index.js', // events
-    types:           './src/js/types.js',
-    subtypes:        './src/js/subtypes.js',
+    index:          './src/js/index.js', // Homepage
+    events:           './src/js/events.js',
   },
 
   output: {

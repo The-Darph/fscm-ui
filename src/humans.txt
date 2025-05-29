@@ -1,14 +1,14 @@
 /* TEAM */
-Your title: Your name.
-Site: email, link to a contact form, etc.
-Twitter: your Twitter username.
-Location: City, Country.
+Developer: A real one
+Site: This is the site
+Twitter: Twitter is for Nazis. Stay away
+Location: USA
 
 /* THANKS */
-Name: name or url
+Donald Trump: For making everyone's life worse except for anyone who already had a great life with fuck-you money
 
 /* SITE */
-Last update: YYYY/MM/DD 
-Standards: HTML5, CSS3,..
-Components: Modernizr, jQuery, etc.
-Software: Software used for the development
+Last update: 2025/05/29 
+Standards: HTML5, CSS3, ES6, Babel, Webpack, Rust, HTTP
+Components: ...
+Software: macOS, SublimeText, Ghostty FontBook
