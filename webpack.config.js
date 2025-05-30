@@ -17,7 +17,7 @@ module.exports = {
   // https://webpack.js.org/concepts/entry-points/#multi-page-application
   entry: {
     index:          './src/js/index.js', // Homepage
-    events:           './src/js/events.js',
+    events:         './src/js/events.js',
   },
 
   output: {
@@ -69,7 +69,7 @@ module.exports = {
         use: {
           loader: "babel-loader",
           options: {
-            presets: ['@babel/preset-env']
+            presets: ['@babel/preset-env', '@babel/preset-react']
           }
         }
       },
@@ -81,21 +81,21 @@ module.exports = {
   },
   // https://webpack.js.org/concepts/plugins/
   plugins: [
-    // new CopyPlugin({
-    //   patterns: [
-    //     { from: "src/img/", to: "img/" },
-    //     { from: "src/robots.txt", to: "robots.txt" }
-    //     // { from: "src/fonts/", to: "fonts/" },
-    //     // { from: "src/config/", to: "config/" },
-    //   ],
-    // }),
+    new CopyPlugin({
+      patterns: [
+        // { from: "src/img/", to: "img/" },
+        { from: "src/robots.txt", to: "robots.txt" },
+        { from: "src/font/", to: "font/" },
+        // { from: "src/config/", to: "config/" },
+      ],
+    }),
     new CleanWebpackPlugin(),
     new webpack.ProvidePlugin({
         $: "jquery",
         jQuery: "jquery"
     }),
     new HtmlWebpackPlugin({
-      title: 'Second Story Records',
+      title: 'Fascism Tracker | It\'s not coming. It\'s here.',
       // footerMarkup: footerMarkup,
       // headerMarkup: headerMarkup,
       template: './src/index.html',
@@ -104,31 +104,13 @@ module.exports = {
       filename: 'index.html'
     }),
     new HtmlWebpackPlugin({
-      title: 'Artists | Second Story Records',
+      title: 'Fascism Tracker | It\'s not coming. It\'s here.',
       // footerMarkup: footerMarkup,
       // headerMarkup: headerMarkup,
-      template: './src/index.html',
+      template: './src/events/index.html',
       inject: true,
       chunks: ['index'],
-      filename: 'index.html'
-    }),
-    new HtmlWebpackPlugin({
-      title: 'Releases | Second Story Records',
-      // footerMarkup: footerMarkup,
-      // headerMarkup: headerMarkup,
-      template: './src/subtypes/index.html',
-      inject: true,
-      chunks: ['subtypes'],
-      filename: 'subtypes/index.html'
-    }),
-    new HtmlWebpackPlugin({
-      title: 'News | Second Story Records',
-      // footerMarkup: footerMarkup,
-      // headerMarkup: headerMarkup,
-      template: './src/types/index.html',
-      inject: true,
-      chunks: ['types'],
-      filename: 'types/index.html'
+      filename: 'events/index.html'
     }),
     new MiniCssExtractPlugin({
       filename: "[name].css",
