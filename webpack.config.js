@@ -81,6 +81,9 @@ module.exports = {
   },
   // https://webpack.js.org/concepts/plugins/
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env.API_BASE_URL': JSON.stringify(process.env.API_BASE_URL || 'http://localhost:8080'),
+    }),
     new CopyPlugin({
       patterns: [
         // { from: "src/img/", to: "img/" },

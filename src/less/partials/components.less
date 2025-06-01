@@ -1,0 +1,31 @@
+@tag-colors: @red, @blue, @yellow, @green, @cream, @orange, @dorange;
+
+.subtype {
+  each(@tag-colors, {
+    &:nth-child(@{index}) {
+      background-color: @value;
+    }
+  });
+}
+
+.event-type, .subtype {
+  font-size: 0.7em;
+  font-family: @headline-font;
+  font-weight: bold;
+  padding: 2px 8px;
+  margin-right: 0.7em;
+  // margin-top: 2rem;
+  white-space: nowrap;
+  color: @body-color;
+  border: 1px solid @ltgray;
+  .border-radius(10px);
+
+  &last-child {
+    margin-right: 0;
+  }
+}
+
+.event-type {
+  background-color: @ltgray;
+  border: 1px solid @red;
+}
