@@ -18,37 +18,8 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-4">
-        <h3>Sort &amp; Filter</h3>
-        <!-- sort by date -->
-        <label class="date filtering" for="date">
-          <select name="date">
-              <option>Sort by...</option>
-              <option value="newest">New to old</option>
-              <option value="oldest">Old to new</option>
-          </select>
-        </label>
-        <!-- filter by type -->
-        <div class="filtering">
-          <div class="type-options">
-            <!-- expands to show options on user interaction -->
-          </div>
-        </div>
-        <!-- filter by subtype -->
-        <div class="filtering">
-          <div class="subtype-options">
-              <!-- expands to show options on user interaction -->
-          </div>
-        </div>
-      </div>
-
-      <main class="col-8">
-        <header>
-           <h1 class="site-title">Fascism</h1>
-        </header>
-        <div id="event-results">
-           <p class="event-loading-indicator">Loading...</p>
-        </div>
+      <main id="event-results">
+         <p class="event-loading-indicator">Loading...</p>
       </main>
     </div>
   </div>
