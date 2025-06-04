@@ -113,6 +113,7 @@ function EventsList({ selectedTypes }) {
 
   return (
     <div className="col-8">
+      <h1 className="h2 site-title">The Dystopian Epoch</h1>
       {!selectedEvent ? (
         <div className="event">
           {filteredEvents.map(res => (
