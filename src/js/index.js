@@ -80,7 +80,7 @@ function TypesFilter({ selectedTypes, setSelectedTypes, selectedSubtypes, setSel
   );
 }
 
-function EventsList({ selectedTypes }) {
+function EventsList({ selectedTypes, selectedSubtypes }) {
   const [events, setEvents] = useState([]);
   const [selectedEvent, setSelectedEvent] = useState(null);
 
@@ -104,12 +104,19 @@ function EventsList({ selectedTypes }) {
   console.log(events);
   console.log(selectedEvent);
 
-  const filteredEvents = selectedTypes.length === 0
-  ? events
-  : events.filter(res => 
-      selectedTypes.includes(res.event.type) ||
-      res.subtypes.some(sub => selectedTypes.includes(sub.id))
-    );
+  const filteredEvents = events.filter(res => {
+    const matchesType = selectedTypes.length === 0 || selectedTypes.includes(res.event.type_);
+    const matchesSubtype =
+      selectedSubtypes.length === 0 || res.subtypes.some(sub => selectedSubtypes.includes(sub.id));
+    return matchesType && matchesSubtype;
+  });
+
+  // const filteredEvents = selectedTypes.length === 0
+  // ? events
+  // : events.filter(res => 
+  //     selectedTypes.includes(res.event.type) ||
+  //     res.subtypes.some(sub => selectedTypes.includes(sub.id))
+  //   );
 
   return (
     <div className="col-8">
@@ -120,7 +127,7 @@ function EventsList({ selectedTypes }) {
             <div key={res.event.id} className="list-event">
               <time className="small" dateTime={res.event.transpired}>{moment(res.event.transpired).format("Do MMMM, YYYY")}</time>
               <h3 className="hug">
-                <a href="#" onClick={(e) => { e.preventDefault(); handleEventClick(res.event); }}>{res.event.description}</a>
+                <a href="#" onClick={(e) => { e.preventDefault(); handleEventClick(res); }}>{res.event.description}</a>
               </h3>
               <p className="hug">
                 <a href={res.event.source} target="_blank">(Source)</a>
@@ -143,9 +150,11 @@ function EventsList({ selectedTypes }) {
       ) : (
         // This doesn't work
         <div>
-          <h1>{selectedEvent.description}</h1>
-          <p>{selectedEvent.body}</p>
-          <button onClick={handleBackClick}>Back to list</button>
+          <h3>{selectedEvent.event.description}</h3>
+          <p>{selectedEvent.event.body}</p>
+          <p className="hug">
+            <a href="#" className="button-link" onClick={handleBackClick}>Back to list</a>
+          </p>
         </div>
       )}
     </div>

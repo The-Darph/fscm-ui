@@ -1,0 +1,26 @@
+// All styles related to links and links that look like buttons and the like...
+
+.button-link {
+  display: inline-block;
+  font-family: @headline-font;
+  font-size: 1em;
+  font-weight: bold;
+  padding: 0.5em 1.5em;
+  .border-radius(3px);
+  margin-top: 1em;
+  background: @link-color;
+  border: 1px solid darken(@link-color, 5%);
+  color: @white;
+  .transition(@prop: all, @time: 0.25s, @ease: linear);
+
+  &:hover {
+    .transition (@prop: all, @time: 0.25s, @ease: linear);
+    background: @blue;
+    border: 1px solid darken(@blue, 10%);
+    color: @white;
+  }
+
+  &:visited {
+    color: @white;
+  }
+}
